@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\CreateTokenRequest;
 use App\Http\Requests\Contact\CreateToken;
 use App\Http\Requests\Contact\SearchContactRequest;
 use App\Models\User;
@@ -24,7 +25,7 @@ class AuthController extends BaseController
 
     }
 
-    public function createToken(SearchContactRequest $request){
+    public function createToken(CreateTokenRequest $request){
 
         $user = User::where('email', $request->email)->first();
 
