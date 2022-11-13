@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\ContactCreated;
 use App\Http\Requests\Contact\SearchContactRequest;
-use App\Http\Requests\Contact\GetContactResponse;
+use App\Http\Responses\Contact\GetContactResponse;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Services\ContactService;
@@ -25,8 +25,8 @@ class ContactController extends Controller
      */
     public function index(Request $request)
     {
-       $contact = $this->contactService->getWithUserId($request->user()->id);
-       return new GetContactResponse($contact->name,$contact->phone);
+       $contact = $this->contactService->getWithUserId(1);
+       return response($contact);
 
     }
 

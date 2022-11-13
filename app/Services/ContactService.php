@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Http\Responses\Contact\GetContactResponse;
+use App\Http\Responses\Todo\GetTodoResponse;
 use App\Models\Contact;
 use App\Models\ContactPhone;
 
@@ -56,7 +58,12 @@ class ContactService
 
     public function getWithUserId(int $id)
     {
-        return Contact::where('user_id',$id)->get();
+        $contacts = Contact::all();
+        $data = [];
+        foreach ($contacts as $contact){
+            $data[] = new GetContactResponse($contact['first_name'],$contact['phone']);
+        }
+        return $data;
     }
 
 
