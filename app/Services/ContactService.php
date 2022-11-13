@@ -61,7 +61,7 @@ class ContactService
         $contacts = Contact::all();
         $data = [];
         foreach ($contacts as $contact){
-            $data[] = new GetContactResponse($contact['first_name'],$contact['phone']);
+            $data[] = new GetContactResponse($contact['first_name'],$contact['surname']);
         }
         return $data;
     }

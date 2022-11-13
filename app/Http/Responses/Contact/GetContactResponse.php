@@ -7,14 +7,14 @@ use Illuminate\Foundation\Http\FormRequest;
 class GetContactResponse
 {
 
-    public $phone;
+    public $surname;
     public $name;
 
 
-    public function __construct($name,$phone)
+    public function __construct($name,$surname)
     {
         $this->name = $name;
-        $this->phone = $phone;
+        $this->surname = $surname;
     }
 
 }
