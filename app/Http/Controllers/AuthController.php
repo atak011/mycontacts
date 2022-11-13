@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\CreateTokenRequest;
-use App\Http\Requests\Contact\CreateToken;
-use App\Http\Requests\Contact\SearchContactRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Services\AuthService;
